@@ -1,6 +1,7 @@
 const inquirer = require("inquirer");
 const fs = require("fs");
 const util = require("util");
+const markdoownpdf = require("markdown-pdf")
 
 const writeFileAsync = util.promisify(fs.writeFile);
 
@@ -74,7 +75,14 @@ promptUser()
     })
     .then(function(){
         console.log("Successfully wrote to README.md");
+
+        return markdoownpdf()
+        .from("README.md")
+        .to("README.pdf", function(){
+            console.log("Success??")
+        });
     })
+    .then()
     .catch(function(err) {
         console.log(err);
       });
