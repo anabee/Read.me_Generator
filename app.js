@@ -52,15 +52,15 @@ function promptUser(){
 // This function will generate an html file with the data in it
 function generateReadMe (answers){
     return `
-    Homework 9 - README.md
+    <h1>Homework 9 - README.md</h1>
 
     Descirption
 
     ${answers.project_description}
 
     Table of Contents
-     *Installation 
-     *Usage 
+     * Installation 
+     * Usage 
     `
 }
 
