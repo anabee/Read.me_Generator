@@ -1,9 +1,9 @@
 
     # Homework 9 - README.md
-
+# Added after the fact
     ## Descirption
 
-    th
+    description
 
     Table of Contents
      * Installation 
