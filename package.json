@@ -21,6 +21,7 @@
   },
   "homepage": "https://github.com/anabee/Read.me_Generator#readme",
   "dependencies": {
+    "axios": "^0.19.2",
     "inquirer": "^7.0.5",
     "markdown-pdf": "^10.0.0",
     "util": "^0.12.2"

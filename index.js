@@ -1,11 +1,13 @@
 const inquirer = require("inquirer");
 const fs = require("fs");
 const util = require("util");
-const markdoownpdf = require("markdown-pdf")
+const markdownpdf = require("markdown-pdf");
+const axios = require("axios");
 
 const writeFileAsync = util.promisify(fs.writeFile);
 
 function promptUser(){   
+    let result = {}
     return inquirer.prompt([
         {
             type: "input",
@@ -35,11 +37,11 @@ function promptUser(){
         {
             type: "input",
             message: "What command should be run to run tests?",
-            name:"run_test"
+            name:"runtest"
         },
         {
             type: "input",
-            message: "What does the user need to know about using the repo?",
+            message: "What does the user need to know about using this repo?",
             name:"user_notes"
         },
         {
@@ -48,38 +50,80 @@ function promptUser(){
             name:"repo_notes"
         },
     ])
+    .then(function({username, ...userInput}){
+        const queryUrl = `https://api.github.com/users/${username}`;
+
+        result = { username, ...userInput };
+        return axios.get(queryUrl) 
+    })
+    .then(function(response){
+        result.github = response.data;
+        return result;
+    }) 
 }
 
-// This function will generate an html file with the data in it
+
+// This function will generate an md file with the data in it
 function generateReadMe (answers){
-    return `
-    # Homework 9 - README.md
+    return `# ${answers.project_name} - README.md
 
-    ## Descirption
+## Description
 
-    ${answers.project_description}
+${answers.project_description}
 
-    Table of Contents
-     * Installation 
-     * Usage 
-    `
+## Table of Contents
+* Installation 
+* Usage 
+* License
+* Contributing
+* Tests 
+* Questions
+
+## Installation
+To install necessary dependencies, run the following command: 
+
+${answers.dependencies}
+
+## Usage 
+
+${answers.user_notes}
+
+## License 
+This project is licensed under ${answers.license}
+
+
+## Contributing
+
+${answers.repo_notes}
+
+## Tests 
+To run tests, run thew following command:
+
+${answers.runtest}
+
+## Questions 
+
+Insert Image Here 
+
+> If you have any questions about the repo, open an issue or contact ${answers.username} directly at `
 }
+
 
 // Tells node to first run the propmtUser function
 promptUser()
 // then the following funtion will take the input and store it into a variable.
     .then(function(answers){
         const userInput = generateReadMe(answers);
-
+        console.log(answers)
        return writeFileAsync("README.md",userInput)
     })
     .then(function(){
         console.log("Successfully wrote to README.md");
 
-        return markdoownpdf()
+        return markdownpdf()
         .from("README.md")
         .to("README.pdf", function(){
-            console.log("Success??")
+            console.log("Successfully created PDF.")
         });
     })
     .then()
