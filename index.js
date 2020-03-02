@@ -67,22 +67,25 @@ function promptUser(){
 function generateReadMe (answers){
     return `# ${answers.project_name} - README.md
 
+![Github License](https://img.shields.io/badge/license-${answers.license}-blue.svg)
+
 ## Description
 
 ${answers.project_description}
 
 ## Table of Contents
-* Installation 
-* Usage 
-* License
-* Contributing
-* Tests 
-* Questions
+* [Installation](#installation) 
+* [Usage](#usage) 
+* [License](#license)
+* [Contributing](#contributing)
+* [Tests](#tests) 
+* [Questions](#questions)
 
 ## Installation
 To install necessary dependencies, run the following command: 
 
 ${answers.dependencies}
+
 
 ## Usage 
 
@@ -103,9 +106,10 @@ ${answers.runtest}
 
 ## Questions 
 
-Insert Image Here 
+<img src="${answers.github.avatar_url}" alt="avatar" style="border-radius: 16px" width="30 />
 
-> If you have any questions about the repo, open an issue or contact ${answers.username} directly at `
+> If you have any questions about the repo, open an issue or contact ${answers.username} directly at: [GitHub](${answers.github.url}) | [Email](${answers.github.email})
+`
 }
 
 
@@ -114,7 +118,7 @@ promptUser()
 // then the following funtion will take the input and store it into a variable.
     .then(function(answers){
         const userInput = generateReadMe(answers);
-        console.log(answers)
+        
        return writeFileAsync("README.md",userInput)
     })
     .then(function(){
