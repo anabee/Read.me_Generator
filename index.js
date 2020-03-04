@@ -65,6 +65,7 @@ function promptUser(){
 
 // This function will generate an md file with the data in it
 function generateReadMe (answers){
+
     return `# ${answers.project_name} - README.md
 
 ![Github License](https://img.shields.io/badge/license-${answers.license}-blue.svg)
