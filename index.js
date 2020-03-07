@@ -85,7 +85,7 @@ ${answers.project_description}
 ## Installation
 To install necessary dependencies, run the following command: 
 
-${answers.dependencies}
+    ${answers.dependencies}
 
 
 ## Usage 
@@ -100,10 +100,11 @@ This project is licensed under ${answers.license}
 
 ${answers.repo_notes}
 
+
 ## Tests 
 To run tests, run thew following command:
 
-${answers.runtest}
+    ${answers.runtest}
 
 ## Questions 
 
