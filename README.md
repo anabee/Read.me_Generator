@@ -1,10 +1,10 @@
-# ReadMe Generator - README.md
+# employeeTracker_MySQL - README.md
 
 ![Github License](https://img.shields.io/badge/license-MIT-blue.svg)
 
 ## Description
 
-This is a project that allows users to create a Readme.md file for their projects.
+This project allows the user to make a command line application that allow that creates an employee directory. The app is made using mySQL databases which store information regarding employees, departments, and roles. The application also allows the user to edit and view a variety of feautures.
 
 ## Table of Contents
 * [Installation](#installation) 
@@ -22,7 +22,7 @@ To install necessary dependencies, run the following command:
 
 ## Usage 
 
-This repo is accessible,
+delete
 
 ## License 
 This project is licensed under MIT
@@ -30,16 +30,16 @@ This project is licensed under MIT
 
 ## Contributing
 
-They can contribute as they like.
+delete
 
 
 ## Tests 
 To run tests, run thew following command:
 
-    npm run test
+    delete
 
 ## Questions 
 
-<img src="https://avatars3.githubusercontent.com/u/42880531?v=4" alt="avatar" style="border-radius: 16px" width="30" />
+<img src="https://avatars3.githubusercontent.com/u/42880531?v=4" alt="avatar" style="border-radius: 16px" width="30 />
 
 > If you have any questions about the repo, open an issue or contact anabee directly at: [GitHub](https://api.github.com/users/anabee) | [Email](null)
