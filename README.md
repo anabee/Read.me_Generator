@@ -1,10 +1,10 @@
-# employeeTracker_MySQL - README.md
+# BudgetTracker - README.md
 
-![Github License](https://img.shields.io/badge/license-MIT-blue.svg)
+![Github License](https://img.shields.io/badge/license--blue.svg)
 
 ## Description
 
-This project allows the user to make a command line application that allow that creates an employee directory. The app is made using mySQL databases which store information regarding employees, departments, and roles. The application also allows the user to edit and view a variety of feautures.
+This Budget Tracker allows you to keep a virtual track of your expenses. You can add of subrtact funds to your account. The app is avalaible for off line use through IndexedDB. The changesmade to the app off line, are temporarily saved on the IndexedDB and once a network connection is establiched then the data will be pushed into the MongoDB. 
 
 ## Table of Contents
 * [Installation](#installation) 
@@ -17,26 +17,26 @@ This project allows the user to make a command line application that allow that 
 ## Installation
 To install necessary dependencies, run the following command: 
 
-    npm install
+    	11111
 
 
 ## Usage 
 
-delete
+111
 
 ## License 
-This project is licensed under MIT
+This project is licensed under 
 
 
 ## Contributing
 
-delete
+11111
 
 
 ## Tests 
 To run tests, run thew following command:
 
-    delete
+    111111
 
 ## Questions 
 
